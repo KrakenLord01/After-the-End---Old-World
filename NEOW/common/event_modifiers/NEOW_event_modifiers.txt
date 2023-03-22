@@ -749,3 +749,7 @@ infidel_vassal_piety_gain = {
 	icon = 8
 	add_piety_modifier = 0.25
 }
+recent_pirate_raid = {
+	icon = 61
+	oceanic_opinion = 5
+}

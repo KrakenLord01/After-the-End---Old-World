@@ -528,3 +528,666 @@ character_event = {
 		ai_chance = { factor = 20 }
 	}
 }
+
+character_event = {
+	id = pir.502
+	desc = EVTDESC_pirate_raid_1
+	picture = GFX_evt_merchant_ship_at_sea_republic
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = on_pirate_raid
+	}
+
+	option = { #Schooner
+		name = EVTOPTA_pirate_raid_1
+		hidden_tooltip = {
+			character_event = { id = pir.503 days = 1 }
+		}
+	}
+
+	option = { #Brig
+		name = EVTOPTB_pirate_raid_1
+		hidden_tooltip = {
+			character_event = { id = pir.504 days = 1 }
+		}
+	}
+
+	option = { #Galleon
+		name = EVTOPTC_pirate_raid_1
+		hidden_tooltip = {
+			character_event = { id = pir.505 days = 1 }
+		}
+	}
+
+	option = { #Man-O-War
+		name = EVTOPTD_pirate_raid_1
+		hidden_tooltip = {
+			character_event = { id = pir.506 days = 1 }
+		}
+	}
+}
+
+###Approaching the Ship###
+
+character_event = { #Schooner Raid
+	id = pir.503
+	desc = EVTDESC_pirate_raid_2
+	picture = GFX_evt_merchant_ship_at_sea_republic
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = on_pirate_raid
+	}
+
+	option = {
+		name = EVTOPTA_pirate_raid_2
+		hidden_tooltip = {
+			random_list = {
+				80 = {
+					character_event = { id = pir.507 days = 1 }
+				}
+				20 = {
+					character_event = { id = pir.508 days = 1 }
+				}
+			}
+		}
+	}
+}
+
+character_event = { #Brig Raid
+	id = pir.504
+	desc = EVTDESC_pirate_raid_3
+	picture = GFX_evt_merchant_ship_at_sea_republic
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = on_pirate_raid
+	}
+
+	option = {
+		name = EVTOPTA_pirate_raid_3
+		hidden_tooltip = {
+			random_list = {
+				65 = {
+					character_event = { id = pir.509 days = 1 }
+				}
+				35 = {
+					character_event = { id = pir.510 days = 1 }
+				}
+			}
+		}
+	}
+}
+
+character_event = { #Galleon Raid
+	id = pir.505
+	desc = EVTDESC_pirate_raid_4
+	picture = GFX_evt_merchant_ship_at_sea_republic
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = on_pirate_raid
+	}
+
+	option = {
+		name = EVTOPTA_pirate_raid_4
+		hidden_tooltip = {
+			random_list = {
+				50 = {
+					character_event = { id = pir.511 days = 1 }
+				}
+				50 = {
+					character_event = { id = pir.512 days = 1 }
+				}
+			}
+		}
+	}
+}
+
+character_event = { #Man-O-War Raid
+	id = pir.506
+	desc = EVTDESC_pirate_raid_5
+	picture = GFX_evt_merchant_ship_at_sea_republic
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = on_pirate_raid
+	}
+
+	option = {
+		name = EVTOPTA_pirate_raid_5
+		hidden_tooltip = {
+			random_list = {
+				35 = {
+					character_event = { id = pir.513 days = 1 }
+				}
+				65 = {
+					character_event = { id = pir.514 days = 1 }
+				}
+			}
+		}
+	}
+}
+
+###Raided Ship Response###
+
+character_event = { #Schooner surrendered without fight
+	id = pir.507
+	desc = EVTDESC_pirate_raid_6
+	picture = GFX_evt_feast
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = on_pirate_raid
+	}
+
+	immediate = {
+		clr_character_flag = on_pirate_raid
+		clr_character_flag = do_not_disturb
+		clr_character_flag = recent_minor_decision
+		add_character_modifier = { name = recent_pirate_raid years = 3 }
+	}
+
+	option = {
+		name = EVTOPTA_pirate_raid_6
+		wealth = 50
+	}
+}
+
+character_event = { #Schooner chose violence
+	id = pir.508
+	desc = EVTDESC_pirate_raid_7
+	picture = GFX_evt_battle
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = on_pirate_raid
+	}
+
+	option = {
+		name = EVTOPTA_pirate_raid_7
+		hidden_tooltip = {
+			random_list = {
+				75 = {
+					character_event = { id = pir.515 days = 1 }
+				}
+				25 = {
+					character_event = { id = pir.516 days = 1 }
+				}
+			}
+		}
+	}
+}
+
+character_event = { #Brig surrendered without fight
+	id = pir.509
+	desc = EVTDESC_pirate_raid_8
+	picture = GFX_evt_feast
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = on_pirate_raid
+	}
+
+	immediate = {
+		clr_character_flag = on_pirate_raid
+		clr_character_flag = do_not_disturb
+		clr_character_flag = recent_minor_decision
+		add_character_modifier = { name = recent_pirate_raid years = 3 }
+	}
+
+	option = {
+		name = EVTOPTA_pirate_raid_8
+		wealth = 100
+	}
+}
+
+character_event = { #Brig chose violence
+	id = pir.510
+	desc = EVTDESC_pirate_raid_9
+	picture = GFX_evt_battle
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = on_pirate_raid
+	}
+
+	option = {
+		name = EVTOPTA_pirate_raid_9
+		hidden_tooltip = {
+			random_list = {
+				65 = {
+					character_event = { id = pir.517 days = 1 }
+				}
+				35 = {
+					character_event = { id = pir.518 days = 1 }
+				}
+			}
+		}
+	}
+}
+
+character_event = { #Galleon surrendered without fight
+	id = pir.511
+	desc = EVTDESC_pirate_raid_10
+	picture = GFX_evt_feast
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = on_pirate_raid
+	}
+
+	immediate = {
+		clr_character_flag = on_pirate_raid
+		clr_character_flag = do_not_disturb
+		clr_character_flag = recent_minor_decision
+		add_character_modifier = { name = recent_pirate_raid years = 3 }
+	}
+
+	option = {
+		name = EVTOPTA_pirate_raid_10
+		wealth = 250
+	}
+}
+
+character_event = { #Galleon chose violence
+	id = pir.512
+	desc = EVTDESC_pirate_raid_11
+	picture = GFX_evt_battle
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = on_pirate_raid
+	}
+
+	option = {
+		name = EVTOPTA_pirate_raid_11
+		hidden_tooltip = {
+			random_list = {
+				50 = {
+					character_event = { id = pir.519 days = 1 }
+				}
+				50 = {
+					character_event = { id = pir.520 days = 1 }
+				}
+			}
+		}
+	}
+}
+
+character_event = { #Man-O-War surrendered without fight
+	id = pir.513
+	desc = EVTDESC_pirate_raid_12
+	picture = GFX_evt_feast
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = on_pirate_raid
+	}
+
+	immediate = {
+		clr_character_flag = on_pirate_raid
+		clr_character_flag = do_not_disturb
+		clr_character_flag = recent_minor_decision
+		add_character_modifier = { name = recent_pirate_raid years = 3 }
+	}
+
+	option = {
+		name = EVTOPTA_pirate_raid_12
+		wealth = 500
+	}
+}
+
+character_event = { #Man-O-War chose violence
+	id = pir.514
+	desc = EVTDESC_pirate_raid_13
+	picture = GFX_evt_battle
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = on_pirate_raid
+	}
+
+	option = {
+		name = EVTOPTA_pirate_raid_13
+		hidden_tooltip = {
+			random_list = {
+				40 = {
+					character_event = { id = pir.521 days = 1 }
+				}
+				60 = {
+					character_event = { id = pir.522 days = 1 }
+				}
+			}
+		}
+	}
+}
+
+###Ship Battle Results###
+
+character_event = { #Schooner Battle Victory
+	id = pir.515
+	desc = EVTDESC_pirate_raid_14
+	picture = GFX_evt_battle
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = on_pirate_raid
+	}
+
+	immediate = {
+		clr_character_flag = on_pirate_raid
+		clr_character_flag = do_not_disturb
+		clr_character_flag = recent_minor_decision
+		add_character_modifier = { name = recent_pirate_raid years = 5 }
+	}
+
+	option = {
+		name = EVTOPTA_pirate_raid_14
+		wealth = 50
+	}
+}
+
+character_event = { #Schooner Battle Defeat
+	id = pir.516
+	desc = EVTDESC_pirate_raid_15
+	picture = GFX_evt_battle
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = on_pirate_raid
+	}
+
+	immediate = {
+		clr_character_flag = on_pirate_raid
+		clr_character_flag = do_not_disturb
+		clr_character_flag = recent_minor_decision
+		add_character_modifier = { name = recent_pirate_raid years = 5 }
+	}
+
+	option = {
+		name = EVTOPTA_pirate_raid_15
+		random_list = {
+			5 = {
+				trait = wounded
+			}
+			5 = {
+				trait = maimed
+			}
+			5 = {
+				if = {
+					limit = {
+						has_dlc = "Reapers"
+					}
+					trait = one_handed
+				}
+			}
+			5 = {
+				if = {
+					limit = {
+						has_dlc = "Reapers"
+					}
+					trait = one_eyed
+				}
+			}
+			5 = {
+				if = {
+					limit = {
+						has_dlc = "Reapers"
+					}
+					trait = one_legged
+				}
+			}
+			75 = { }
+		}
+	}
+}
+
+character_event = { #Brig Battle Victory
+	id = pir.517
+	desc = EVTDESC_pirate_raid_16
+	picture = GFX_evt_battle
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = on_pirate_raid
+	}
+
+	immediate = {
+		clr_character_flag = on_pirate_raid
+		clr_character_flag = do_not_disturb
+		clr_character_flag = recent_minor_decision
+		add_character_modifier = { name = recent_pirate_raid years = 5 }
+	}
+
+	option = {
+		name = EVTOPTA_pirate_raid_16
+		wealth = 100
+	}
+}
+
+character_event = { #Brig Battle Defeat
+	id = pir.518
+	desc = EVTDESC_pirate_raid_17
+	picture = GFX_evt_battle
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = on_pirate_raid
+	}
+
+	immediate = {
+		clr_character_flag = on_pirate_raid
+		clr_character_flag = do_not_disturb
+		clr_character_flag = recent_minor_decision
+		add_character_modifier = { name = recent_pirate_raid years = 5 }
+	}
+
+	option = {
+		name = EVTOPTA_pirate_raid_17
+		random_list = {
+			10 = {
+				trait = wounded
+			}
+			10 = {
+				trait = maimed
+			}
+			5 = {
+				if = {
+					limit = {
+						has_dlc = "Reapers"
+					}
+					trait = one_handed
+				}
+			}
+			5 = {
+				if = {
+					limit = {
+						has_dlc = "Reapers"
+					}
+					trait = one_eyed
+				}
+			}
+			5 = {
+				if = {
+					limit = {
+						has_dlc = "Reapers"
+					}
+					trait = one_legged
+				}
+			}
+			65 = { }
+		}
+	}
+}
+
+character_event = { #Galleon Battle Victory
+	id = pir.519
+	desc = EVTDESC_pirate_raid_18
+	picture = GFX_evt_battle
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = on_pirate_raid
+	}
+
+	immediate = {
+		clr_character_flag = on_pirate_raid
+		clr_character_flag = do_not_disturb
+		clr_character_flag = recent_minor_decision
+		add_character_modifier = { name = recent_pirate_raid years = 5 }
+	}
+
+	option = {
+		name = EVTOPTA_pirate_raid_18
+		wealth = 200
+	}
+}
+
+character_event = { #Galleon Battle Defeat
+	id = pir.520
+	desc = EVTDESC_pirate_raid_19
+	picture = GFX_evt_battle
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = on_pirate_raid
+	}
+
+	immediate = {
+		clr_character_flag = on_pirate_raid
+		clr_character_flag = do_not_disturb
+		clr_character_flag = recent_minor_decision
+		add_character_modifier = { name = recent_pirate_raid years = 5 }
+	}
+
+	option = {
+		name = EVTOPTA_pirate_raid_19
+		random_list = {
+			15 = {
+				trait = wounded
+			}
+			15 = {
+				trait = maimed
+			}
+			5 = {
+				if = {
+					limit = {
+						has_dlc = "Reapers"
+					}
+					trait = one_handed
+				}
+			}
+			5 = {
+				if = {
+					limit = {
+						has_dlc = "Reapers"
+					}
+					trait = one_eyed
+				}
+			}
+			5 = {
+				if = {
+					limit = {
+						has_dlc = "Reapers"
+					}
+					trait = one_legged
+				}
+			}
+			45 = { }
+		}	
+	}
+}
+
+character_event = { #Man-O-War Battle Victory
+	id = pir.521
+	desc = EVTDESC_pirate_raid_20
+	picture = GFX_evt_battle
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = on_pirate_raid
+	}
+
+	immediate = {
+		clr_character_flag = on_pirate_raid
+		clr_character_flag = do_not_disturb
+		clr_character_flag = recent_minor_decision
+		add_character_modifier = { name = recent_pirate_raid years = 5 }
+	}
+
+	option = {
+		name = EVTOPTA_pirate_raid_20
+		wealth = 500
+	}
+}
+
+character_event = { #Man-O-War Battle Defeat
+	id = pir.522
+	desc = EVTDESC_pirate_raid_21
+	picture = GFX_evt_battle
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = on_pirate_raid
+	}
+
+	immediate = {
+		clr_character_flag = on_pirate_raid
+		clr_character_flag = do_not_disturb
+		clr_character_flag = recent_minor_decision
+		add_character_modifier = { name = recent_pirate_raid years = 5 }
+	}
+
+	option = {
+		name = EVTOPTA_pirate_raid_21
+		random_list = {
+			20 = {
+				trait = wounded
+			}
+			20 = {
+				trait = maimed
+			}
+			5 = {
+				if = {
+					limit = {
+						has_dlc = "Reapers"
+					}
+					trait = one_handed
+				}
+			}
+			5 = {
+				if = {
+					limit = {
+						has_dlc = "Reapers"
+					}
+					trait = one_eyed
+				}
+			}
+			5 = {
+				if = {
+					limit = {
+						has_dlc = "Reapers"
+					}
+					trait = one_legged
+				}
+			}
+			45 = { }
+		}
+	}
+}
+
+###Pirate Raid Flag and Cache Clearing###
+
+character_event = {
+	id = pir.523
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		clr_character_flag = on_pirate_raid
+		clr_character_flag = do_not_disturb
+		clr_character_flag = recent_minor_decision
+	}
+}
